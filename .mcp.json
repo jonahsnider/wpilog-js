@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "vite-plus": {
+      "type": "stdio",
+      "command": "bun",
+      "args": ["vp", "mcp"],
+      "env": {}
+    }
+  }
+}
