@@ -1,23 +1,31 @@
-# vite-plus-starter
+# wpilog
 
-A starter for creating a Vite Plus project.
+Read [WPILib data log (`.wpilog`)](https://docs.wpilib.org/en/stable/docs/software/telemetry/datalog.html) files in TypeScript & JavaScript.
+
+## Install
+
+```bash
+npm install wpilog
+```
+
+## Usage
+
+```ts
+import { createReadStream } from 'node:fs';
+import { Readable } from 'node:stream';
+import { readRecords, decodeRecords } from 'wpilog';
+
+const stream = Readable.toWeb(createReadStream('./example.wpilog'));
+
+for await (const record of decodeRecords(readRecords(stream))) {
+	console.log(record);
+}
+```
 
 ## Development
 
-- Install dependencies:
-
 ```bash
 vp install
-```
-
-- Run the unit tests:
-
-```bash
 vp test
-```
-
-- Build the library:
-
-```bash
 vp pack
 ```
