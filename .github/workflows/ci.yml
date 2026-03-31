@@ -18,11 +18,7 @@ jobs:
         with:
           node-version: 'lts'
           cache: true
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
-      - name: Lint
-        run: bun run check
-      - name: Build
-        run: bun run build
-      - name: Test
-        run: bun run test
+      - run: bun install --frozen-lockfile
+      - run: vp check
+      - run: vp test
+      - run: vp build

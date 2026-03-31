@@ -37,8 +37,8 @@ jobs:
       - name: Install dependencies
         if: ${{ steps.release.outputs.release_created }}
         run: bun install --frozen-lockfile
-      - name: Build and test
-        run: bun run build && bun run test
+      - name: Lint, test, and build
+        run: vp check && vp test && vp build
         if: ${{ steps.release.outputs.release_created }}
       - name: Publish to npm
         run: npm publish --provenance
