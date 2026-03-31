@@ -18,6 +18,7 @@ jobs:
         with:
           node-version: 'lts'
           cache: true
+          run-install: false
       - run: bun install --frozen-lockfile
       - run: vp check
       - run: vp test

@@ -29,6 +29,7 @@ jobs:
         with:
           node-version: 'lts'
           cache: true
+          run-install: false
           registry-url: 'https://registry.npmjs.org'
         if: ${{ steps.release.outputs.release_created }}
       - name: Setup Bun
