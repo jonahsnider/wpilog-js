@@ -1,8 +1,8 @@
 {
-	"name": "wpilog",
+	"name": "wpilog-parser",
 	"version": "1.0.0",
 	"description": "Read WPILib wpilog data log files in TypeScript & JavaScript",
-	"homepage": "https://github.com/jonahsnider/wpilog#readme",
+	"homepage": "https://github.com/jonahsnider/wpilog-parser#readme",
 	"license": "MIT",
 	"author": {
 		"name": "Jonah Snider",
@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jonahsnider/wpilog.git"
+		"url": "git+https://github.com/jonahsnider/wpilog-parser.git"
 	},
 	"files": [
 		"dist"

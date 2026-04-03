@@ -1,11 +1,11 @@
-# wpilog
+# wpilog-parser
 
 Read [WPILib data log (`.wpilog`)](https://docs.wpilib.org/en/stable/docs/software/telemetry/datalog.html) files in TypeScript & JavaScript.
 
 ## Install
 
 ```bash
-npm install wpilog
+npm install wpilog-parser
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install wpilog
 ```ts
 import { createReadStream } from 'node:fs';
 import { Readable } from 'node:stream';
-import { readRecords, decodeRecords } from 'wpilog';
+import { readRecords, decodeRecords } from 'wpilog-parser';
 
 const stream = Readable.toWeb(createReadStream('./example.wpilog'));
 
