@@ -3,9 +3,7 @@ import path from 'node:path';
 
 const FIXTURES_DIR = path.join(import.meta.dirname, '..', 'fixtures', 'logs');
 
-// TODO: FRC_20250727_235138__E14 is truncated/corrupt and `readRecords` throws
-// StreamFinishedError mid-parse. Investigate and re-add once parsing is robust.
-const FIXTURE_NAMES = ['FRC_20241110_165657__Q68', 'FRC_20251109_211045__E2'] as const;
+const FIXTURE_NAMES = ['FRC_20241110_165657__Q68', 'FRC_20250727_235138__E14', 'FRC_20251109_211045__E2'] as const;
 
 type FixtureName = (typeof FIXTURE_NAMES)[number];
 

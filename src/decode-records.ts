@@ -26,13 +26,29 @@ function normalizeEntryName(rawName: string): string {
 	return `/${rawName}`;
 }
 
+/** Options for {@link decodeRecords}. */
+export type DecodeRecordsOptions = {
+	/**
+	 * When `true`, throw if a data record references an entry ID with no preceding
+	 * Start control record (i.e. a corrupt or truncated log). When `false` (default),
+	 * such orphan records are silently skipped.
+	 */
+	strict?: boolean;
+};
+
 /**
  * Decode raw WPILOG records into typed values.
  *
  * Accepts the output of {@link readRecords} and yields fully decoded records,
  * including struct decoding with dependency resolution.
+ *
+ * By default, data records that reference an entry ID with no preceding Start
+ * control record are silently skipped. Pass `{ strict: true }` to throw instead.
  */
-export function* decodeRecords(records: Iterable<ReadRecord>): Generator<DecodedRecord> {
+export function* decodeRecords(
+	records: Iterable<ReadRecord>,
+	options: DecodeRecordsOptions = { strict: false },
+): Generator<DecodedRecord> {
 	const asyncDecodedStructs: DecodedRecord[] = [];
 
 	const structDecodeQueue = new StructDecodeQueue((structName, queuedRecords) => {
@@ -115,7 +131,11 @@ export function* decodeRecords(records: Iterable<ReadRecord>): Generator<Decoded
 		const recordContext = context.get(raw.entryId);
 
 		if (recordContext === undefined) {
-			throw new RangeError(`No type registered for entry ID ${raw.entryId}`);
+			if (options.strict) {
+				throw new RangeError(`No type registered for entry ID ${raw.entryId}`);
+			}
+			// Corrupt log file, we can't decode this record
+			continue;
 		}
 
 		const name = normalizeEntryName(recordContext.entryName);
