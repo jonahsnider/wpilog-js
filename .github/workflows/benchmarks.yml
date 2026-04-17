@@ -9,6 +9,9 @@ jobs:
   benchmarks:
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    permissions:
+      contents: read # required for actions/checkout
+      id-token: write # required for OIDC authentication with CodSpeed
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v6
@@ -25,5 +28,4 @@ jobs:
         uses: CodSpeedHQ/action@v4
         with:
           run: vp test bench
-          token: ${{ secrets.CODSPEED_TOKEN }}
           mode: 'simulation'
