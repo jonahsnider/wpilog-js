@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/jonahsnider/wpilog-parser/compare/v1.0.1...v2.0.0) (2026-04-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove support for parsing streams
+
+### Features
+
+* remove support for parsing streams ([bd3fab7](https://github.com/jonahsnider/wpilog-parser/commit/bd3fab7014c740da3b4a2db2e71527d01f94e7a2))
+
+
+### Bug Fixes
+
+* fix return type of catalogEntries() ([26076c3](https://github.com/jonahsnider/wpilog-parser/commit/26076c3b77a8cc84763af5f2172b96f3b00e5ada))
+
 ## [1.0.1](https://github.com/jonahsnider/wpilog-js/compare/v1.0.0...v1.0.1) (2026-04-03)
 
 
