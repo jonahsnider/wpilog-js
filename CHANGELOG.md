@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/jonahsnider/wpilog-parser/compare/v2.0.0...v2.1.0) (2026-04-25)
+
+
+### Features
+
+* add graceful handling of corrupt log records ([1fd15cf](https://github.com/jonahsnider/wpilog-parser/commit/1fd15cf541c6234182a05f335095669c63deb321))
+* include SKILL.md in npm package ([2bdf6f0](https://github.com/jonahsnider/wpilog-parser/commit/2bdf6f0816f4c68a43e39b81417b4267d55638b0))
+
+
+### Bug Fixes
+
+* fix catalogEntries() not normalizing names ([5c92e53](https://github.com/jonahsnider/wpilog-parser/commit/5c92e539cf20f13ebcef5e4fa2f857a3069e79d4))
+
 ## [2.0.0](https://github.com/jonahsnider/wpilog-parser/compare/v1.0.1...v2.0.0) (2026-04-17)
 
 
