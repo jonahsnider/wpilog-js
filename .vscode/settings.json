@@ -32,5 +32,5 @@
 	"editor.defaultFormatter": "oxc.oxc-vscode",
 	"editor.formatOnSave": true,
 	"editor.formatOnSaveMode": "file",
-	"oxc.fmt.configPath": "./vite.config.ts"
+	"typescript.native-preview.tsdk": "./node_modules/@typescript/native-preview"
 }
