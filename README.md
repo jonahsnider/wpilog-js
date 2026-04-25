@@ -21,6 +21,20 @@ for (const record of decodeRecords(readRecords(bytes))) {
 }
 ```
 
+## Agent skill
+
+This package ships an [Agent Skill](https://agentskills.io) at `skills/wpilog-parser/SKILL.md` that teaches AI coding agents how to use the library. Install it into your project with either:
+
+```bash
+# https://skills.sh/
+npx skills add wpilog-parser
+```
+
+```bash
+# https://github.com/antfu/skills-npm
+npx skills-npm
+```
+
 ## Development
 
 ```bash

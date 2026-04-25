@@ -14,7 +14,8 @@
 		"url": "git+https://github.com/jonahsnider/wpilog-parser.git"
 	},
 	"files": [
-		"dist"
+		"dist",
+		"skills"
 	],
 	"type": "module",
 	"exports": {
